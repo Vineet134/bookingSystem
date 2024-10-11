@@ -1,0 +1,196 @@
+/* General resets */
+* {
+  margin:55;
+  padding:35;
+  box-sizing: border-box;
+
+}
+.title{
+  height:34px;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color:#0a8db4;
+  border-color:#12b0e8;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f7f7;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container that holds all cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh; /* Full-screen height */
+  padding: 20px;
+  overflow-y: auto; /* Scrollable if content overflows */
+  background: linear-gradient(120deg, #fdfbfb, #ebedee); /* Subtle gradient background */
+}
+
+/* Single card style */
+.card {
+  width: 100%;
+  max-width: 350px;
+  margin: 1rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+/* Hover effects for cards */
+.card:hover {
+  transform: translateY(-10px); /* Lift the card */
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 24px;
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Tour details */
+.tour-info {
+  margin: 20px 0;
+}
+
+.tour-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.tour-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+/* Badge for price type */
+.badge {
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+.badge.premium {
+  background-color: #ff5733;
+  color: white;
+}
+
+.badge.standard {
+  background-color: #ffc107;
+  color: black;
+}
+
+.badge.budget {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Description animations for read more/less */
+.description {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  max-height: 60px; /* Initial collapsed height */
+}
+
+.description.expand {
+  max-height: 500px; /* Expanded height */
+}
+
+.description.collapse {
+  max-height: 60px; /* Collapsed height */
+}
+
+.read-more {
+  cursor: pointer;
+  color: #12b0e8;
+  font-weight: 600;
+  margin-top: 5px;
+  transition: color 0.3s ease;
+}
+
+.read-more:hover {
+  color: #0a8db4;
+}
+
+/* Buttons */
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-red, .btn-like {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 1rem;
+  width: 48%; /* Adjust width to allow side-by-side buttons */
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-red {
+  background-color: #f8d7da;
+  color: #b4161b;
+  border: 1px solid transparent;
+}
+
+.btn-red:hover {
+  background-color: #b4161b;
+  color: white;
+}
+
+.btn-like {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.btn-like.liked {
+  background-color: #ffcccb;
+  color: #b4161b;
+}
+
+.btn-like:hover {
+  background-color: #dcdcdc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    max-width: 90%;
+    margin: 1.5rem 0; /* Increase margin between cards on mobile */
+  }
+
+  .card-actions {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    gap: 10px;
+  }
+
+  .btn-red, .btn-like {
+    width: 100%; /* Full width buttons on smaller screens */
+  }
+}
